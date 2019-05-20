@@ -4,7 +4,7 @@ function TypescriptDeclarationPlugin(options) {
     this.dependencies = options.dependencies || [];
     // Regex
     this.regexImportDirective = /(\/{3} ?<reference types=")([A-Za-z0-9-]+)(" ?\/>)/;
-    this.regexImportModule = /import ({.+}|\*) as ([A-Za-z0-1-]+) from ('|")([A-Za-z0-1-]+)('|");/;
+    this.regexImportModule = /import\s+({.+}|\*)\s+as\s+([A-Za-z0-9\-_\$@\/]+)\s+from\s+('|")([A-Za-z0-9\-_\$@\/]+)('|");/;
 }
 
 TypescriptDeclarationPlugin.prototype.log = function(m) {
